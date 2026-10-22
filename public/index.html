@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Meeting-to-Action Assistant</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<header class="site-header"><a class="brand" href="#input"><span class="brand-mark">M→A</span><span>Meeting-to-Action</span></a><nav><button class="nav-button active" data-view="input">New meeting</button><button class="nav-button" data-view="review">Review</button><button class="nav-button" data-view="dashboard">Task dashboard</button></nav></header>
+<main>
+  <section id="input-view" class="view active">
+    <div class="hero"><p class="eyebrow">University group projects, organised</p><h1>Turn meetings into clear next steps.</h1><p>Capture what was discussed, confirm responsibilities, and keep every action visible.</p></div>
+    <div class="notice"><strong>Demonstration:</strong> AI analysis is simulated in this first-stage prototype. Always review the generated minutes and tasks.</div>
+    <form id="meeting-form" class="panel">
+      <div class="panel-heading"><div><p class="step">Step 1</p><h2>Meeting details</h2></div><span class="muted">All fields required</span></div>
+      <div class="form-grid"><label>Meeting title<input name="title" value="Sustainable Campus App — Design Check-in" required></label><label>Meeting date<input name="date" type="date" value="2026-10-22" required></label></div>
+      <fieldset><legend>Input type</legend><div class="choice-row"><label class="choice"><input type="radio" name="inputType" value="transcript" checked><span><strong>Meeting transcript</strong><small>We’ll draft minutes and identify actions.</small></span></label><label class="choice"><input type="radio" name="inputType" value="minutes"><span><strong>Prepared minutes</strong><small>We’ll preserve your minutes and identify actions.</small></span></label></div></fieldset>
+      <label>Transcript or prepared minutes<textarea name="text" rows="8" required>Maya: I will combine the survey findings for our report. Leo: I can finish the first prototype screens. We should have both ready before next week's review. Aisha: I'll check the research once Maya shares it.</textarea></label>
+      <div class="divider"></div><div class="panel-heading"><div><p class="step">Step 2</p><h2>Participants</h2></div><button type="button" id="add-participant" class="button secondary">+ Add participant</button></div><div id="participants"></div>
+      <div class="actions"><span id="form-message" role="status"></span><button class="button primary" type="submit">Generate demo review →</button></div>
+    </form>
+  </section>
+  <section id="review-view" class="view">
+    <div class="page-heading"><div><p class="eyebrow">Chair review</p><h1>Confirm the meeting record</h1><p>Edit every field before approving actions for the tracker.</p></div><select id="meeting-select" aria-label="Meeting to review"></select></div>
+    <div class="notice"><strong>Sample AI result — demonstration only.</strong> Proposed owners and deadlines are highlighted and need chair confirmation.</div>
+    <div id="review-empty" class="panel empty">Generate a meeting review to begin.</div>
+    <div id="review-content" hidden>
+      <section class="panel"><div class="panel-heading"><div><p class="step">Draft minutes</p><h2 id="review-title"></h2></div><span id="review-status" class="chip"></span></div><label>Editable minutes<textarea id="minutes-editor" rows="7"></textarea></label></section>
+      <section class="panel"><div class="panel-heading"><div><p class="step">Action review</p><h2>Tasks to confirm</h2></div><button id="add-task" class="button secondary" type="button">+ Add task</button></div><div class="table-wrap"><table><thead><tr><th>Task</th><th>Owner</th><th>Deadline</th><th>Flags</th><th></th></tr></thead><tbody id="review-tasks"></tbody></table></div>
+        <div class="email-preview"><span class="chip">Demo email preview</span><h3>Assignment email</h3><p>After approval, each owner would receive task details and a personal progress-update link. No email is sent in this prototype.</p></div>
+        <div class="actions"><span id="review-message" role="status"></span><button id="save-review" class="button secondary">Save edits</button><button id="approve-review" class="button primary">Approve &amp; add to tracker</button></div>
+      </section>
+    </div>
+  </section>
+  <section id="dashboard-view" class="view">
+    <div class="page-heading"><div><p class="eyebrow">Approved actions</p><h1>Task dashboard</h1><p>Track ownership, deadlines, and the latest progress in one place.</p></div><div id="task-count" class="metric"></div></div>
+    <div class="notice"><strong>Demonstration:</strong> Reminder and update links are previews only; no emails are delivered.</div>
+    <section class="panel"><div class="filters"><input id="task-search" type="search" placeholder="Search tasks or owners…"><select id="status-filter"><option value="">All statuses</option><option>Not started</option><option>In progress</option><option>Blocked</option><option>Completed</option></select></div><div class="table-wrap"><table><thead><tr><th>Task</th><th>Owner</th><th>Deadline</th><th>Status</th><th>Latest update</th><th></th></tr></thead><tbody id="dashboard-tasks"></tbody></table></div></section>
+  </section>
+</main><footer>Meeting-to-Action Assistant · Stage 1 prototype</footer><script src="/app.js"></script></body></html>

@@ -1,0 +1,17 @@
+{
+  "meetings": [{
+    "id": "sample-meeting", "title": "Sustainable Campus App — Weekly Project Meeting", "date": "2026-10-20", "inputType": "transcript",
+    "sourceText": "Maya: We need the research summary ready next week. I can combine the survey findings. Leo: I will sketch the prototype screens by Friday. Aisha: I can review both before our next meeting.",
+    "participants": [{ "name": "Maya Chen", "email": "maya.chen@example.edu", "role": "Project chair" }, { "name": "Leo Tan", "email": "leo.tan@example.edu", "role": "UX lead" }, { "name": "Aisha Rahman", "email": "aisha.rahman@example.edu", "role": "Research lead" }],
+    "minutes": "The group reviewed survey progress and planned the first prototype. Maya will consolidate the research, Leo will create initial screen designs, and Aisha will review the material before the next meeting.",
+    "demo": true, "approved": false, "createdAt": "2026-10-20T09:30:00.000Z",
+    "tasks": [
+      { "id": "sample-task-1", "task": "Consolidate survey findings into a research summary", "owner": "Maya Chen", "deadline": "2026-10-27", "ownerProposed": false, "deadlineProposed": true, "status": "Not started", "latestUpdate": "Awaiting chair approval" },
+      { "id": "sample-task-2", "task": "Create initial prototype screen designs", "owner": "Leo Tan", "deadline": "2026-10-23", "ownerProposed": false, "deadlineProposed": false, "status": "In progress", "latestUpdate": "Two key screens have been sketched" }
+    ]
+  }],
+  "tasks": [
+    { "id": "dashboard-task-1", "task": "Complete competitor analysis", "owner": "Aisha Rahman", "deadline": "2026-10-25", "status": "In progress", "latestUpdate": "Reviewed three comparable campus apps", "meetingId": "earlier-meeting", "meetingTitle": "Project Kick-off" },
+    { "id": "dashboard-task-2", "task": "Set up the shared project repository", "owner": "Leo Tan", "deadline": "2026-10-21", "status": "Completed", "latestUpdate": "Repository and contribution guide are ready", "meetingId": "earlier-meeting", "meetingTitle": "Project Kick-off" }
+  ]
+}
